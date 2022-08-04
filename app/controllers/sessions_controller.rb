@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
+  before_action :require_logged_in, only: [:destroy]
+  before_action :already_logged_in, only: [:new, :create]
+
   def new
   end
-
+  # sessionの作成
+  # session: {user_id: xx}
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]

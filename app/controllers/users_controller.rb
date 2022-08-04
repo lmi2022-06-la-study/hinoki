@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
+  before_action :require_logged_in, only: [:show]
+  before_action :already_logged_in, only: [:new, :create]
+  # Topを経由しないといけない
+  # Sessions#create　を経由して session[:user_id]を生成
   def show
+    # 下記だと、sessionが生成されていないとエラニーになる
     # @user = User.find(session[:user_id])
-    @user = User.find_by(id: session[:user_id])
+    # @user = User.find_by(id: session[:user_id])
+    # helperから引っ張ってくる
+    @user = current_user
     if !@user
       redirect_to login_path
     end
