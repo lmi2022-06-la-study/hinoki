@@ -8,10 +8,12 @@ class UsersController < ApplicationController
     # @user = User.find(session[:user_id])
     # @user = User.find_by(id: session[:user_id])
     # helperから引っ張ってくる
-    @user = current_user
-    if !@user
-      redirect_to login_path
-    end
+    @user = :current_user
+    # @user = current_user
+    # require_logged_inで対応
+    # if !@user
+    #   redirect_to login_path
+    # end
   end
 
   def new
