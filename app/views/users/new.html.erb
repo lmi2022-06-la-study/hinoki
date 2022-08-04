@@ -1,14 +1,17 @@
 <h1>会員登録</h1>
-<%# params: {
+<%# 
+下のような構造でparamsを渡している
+    params: {
         user: {
             name: 臭木,
             email: kusakusa@gi.com,
             password: pass,
             password_confirmation: pass,
-        }
+        },
+        id: 1,
+        
 
     }
-
 %>
 <%= form_with model: @user ,url: signup_path do |f| %>
 <dl>
