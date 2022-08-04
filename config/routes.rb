@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
-  get 'users/show'
+  # HTTPメソッド 名前, to: アクション名
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
+
+  # get 'users/show'
   root to: "users#show"
-  get 'users/new'
-  get 'users/create'
+  # get 'users/new'
+  # get 'users/create'
+  # resources "users"
   get "signup", to: 'users#new'
   post "signup", to: 'users#create'
   

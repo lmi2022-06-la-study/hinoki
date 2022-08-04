@@ -14,6 +14,9 @@
     <h1>Railsのユーザ認証</h1>
     <p>
       <%= link_to "会員登録", signup_path %>
+      <%= link_to "ログイン", login_path %>
+      <%= link_to "TOP PAGE", root_path %>
+      <%= link_to "ログアウト", logout_path, method: :delete %>
     </p>
 
     <%= render "commons/flash" %>
