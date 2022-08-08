@@ -9,10 +9,7 @@ class UsersController < ApplicationController
     # @user = User.find_by(id: session[:user_id])
     # helperから引っ張ってくる
     @user = current_user
-    # require_logged_inで対応
-    # if !@user
-    #   redirect_to login_path
-    # end
+    @books = current_user.books.all
   end
 
   def new

@@ -10,4 +10,5 @@ class User < ApplicationRecord
     # 2.会員登録時に自動的にpassword, password_confirmation属性が使える様になる
     # 3.ログイン認証にauthenticatemメソッドを使える
     has_secure_password
+    has_many :books
 end
