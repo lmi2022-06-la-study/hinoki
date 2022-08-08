@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = current_user.book.build(book_params)
+    @book = current_user.books.build(book_params)
     if @book.save
       flash[:success] = '登録しました'
       redirect_to book_path(@book)
@@ -28,6 +28,7 @@ class BooksController < ApplicationController
   def edit
     
   end
+
   def update
     if @book.update(book_params)
       flash[:success] = '更新しました'
@@ -36,15 +37,12 @@ class BooksController < ApplicationController
       flash.now[:danger] = '更新失敗！！'
       render :edit
     end
-    end
   end
+
   def destroy
     @book.destroy
     flash[:success] = '削除！！！！'
     redirect_to root_path
-    
-
-
   end
   private
   def book_params

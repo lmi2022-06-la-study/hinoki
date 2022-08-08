@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'books/index'
-  get 'books/show'
-  get 'books/new'
-  get 'books/edit'
+  # get 'books/index'
+  # get 'books/show'
+  # get 'books/new'
+  # get 'books/edit'
+  resources :books
   get 'sessions/new'
   # HTTPメソッド 名前, to: アクション名
   get 'login', to: 'sessions#new'

@@ -16,6 +16,7 @@
     <% if logged_in? %>
       
       <%= link_to "TOP PAGE", root_path %>
+      <%= link_to "みんなの蔵書", books_path %>
       <%= link_to "ログアウト", logout_path, method: :delete %>
     <% else %>
       <%= link_to "会員登録", signup_path %>
