@@ -5,5 +5,6 @@ class Book < ApplicationRecord
     
     # bookインスタンス.userメソッドが使える
     belongs_to :user
+    has_many :likes
     
 end
